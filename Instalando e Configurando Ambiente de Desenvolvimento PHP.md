@@ -62,6 +62,8 @@ Instalando e Configurando Ambiente de Desenvolvimento PHP
 	- Feito isso, reinicie seu Apache:
 
 		> sudo service apache2 restart
+		ou
+		> sudo /etc/init.d/apache2 restart
 
 	- O módulo **rewrite** foi ativado, mas o Apache não configurou nada além da linha que ativa o módulo no arquivo de configuração do mesmo, deixando assim por conta de você editar manualmente os arquivos dos sites padrões. Acesse:
 
