@@ -152,7 +152,7 @@ Instalando e Configurando Ambiente de Desenvolvimento PHP
 
         - OK, successfully used password, moving on...</br>
         Setting the root password ensures that nobody can log into the MariaDB root user without the proper authorisation.</br>
-        Set root password? [Y/n] 
+        Set root password? [Y/n] **n**
 
         - By default, a MariaDB installation has an anonymous user, anyone to log into MariaDB without having to have a user account created for them. This is intended only for testing, and to make the installation go a bit smoother.  You should remove them before moving into a production environment.</br>
         Remove anonymous users? [Y/n]: **`y`**
