@@ -1,0 +1,108 @@
+Família: Debian/Ubuntu
+Verificando se o horário de verão está com data para mudar.
+
+
+
+# zdump -v Brazil/East | grep 2019
+
+Brazil/East  Sun Feb 17 01:59:59 2019 UT = Sat Feb 16 23:59:59 2019 -02 isdst=1 gmtoff=-7200
+Brazil/East  Sun Feb 17 02:00:00 2019 UT = Sat Feb 16 23:00:00 2019 -03 isdst=0 gmtoff=-10800
+Brazil/East  Sun Nov  3 02:59:59 2019 UT = Sat Nov  2 23:59:59 2019 -03 isdst=0 gmtoff=-10800
+Brazil/East  Sun Nov  3 03:00:00 2019 UT = Sun Nov  3 01:00:00 2019 -02 isdst=1 gmtoff=-7200
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+ 
+# zdump -v Brazil/East | grep 2019
+ 
+Brazil/East  Sun Feb 17 01:59:59 2019 UT = Sat Feb 16 23:59:59 2019 -02 isdst=1 gmtoff=-7200
+Brazil/East  Sun Feb 17 02:00:00 2019 UT = Sat Feb 16 23:00:00 2019 -03 isdst=0 gmtoff=-10800
+Brazil/East  Sun Nov  3 02:59:59 2019 UT = Sat Nov  2 23:59:59 2019 -03 isdst=0 gmtoff=-10800
+Brazil/East  Sun Nov  3 03:00:00 2019 UT = Sun Nov  3 01:00:00 2019 -02 isdst=1 gmtoff=-7200
+ 
+ 
+Agora iremos atualizar o pacote tzdata:
+
+
+
+apt-get update
+apt-get --only-upgrade install tzdata
+
+1
+2
+3
+4
+ 
+apt-get update
+apt-get --only-upgrade install tzdata
+ 
+Vamos verificar novamente se o horário de verão permanece com data para alteração:
+
+
+
+# zdump -v Brazil/East | grep 2019
+Brazil/East  Sun Feb 17 01:59:59 2019 UT = Sat Feb 16 23:59:59 2019 -02 isdst=1 gmtoff=-7200
+Brazil/East  Sun Feb 17 02:00:00 2019 UT = Sat Feb 16 23:00:00 2019 -03 isdst=0 gmtoff=-10800
+
+
+1
+2
+3
+4
+5
+6
+ 
+# zdump -v Brazil/East | grep 2019
+Brazil/East  Sun Feb 17 01:59:59 2019 UT = Sat Feb 16 23:59:59 2019 -02 isdst=1 gmtoff=-7200
+Brazil/East  Sun Feb 17 02:00:00 2019 UT = Sat Feb 16 23:00:00 2019 -03 isdst=0 gmtoff=-10800
+ 
+ 
+Família: CentOS, Redhat e Fedora
+Verificando se o horário de verão está com data para mudar.
+
+# zdump -v Brazil/East | grep 2019
+zdump: warning: zone "Brazil/East" abbreviation "-03" lacks alphabetic at start
+Brazil/East  Sun Feb 17 01:59:59 2019 UTC = Sat Feb 16 23:59:59 2019 -02 isdst=1 gmtoff=-7200
+Brazil/East  Sun Feb 17 02:00:00 2019 UTC = Sat Feb 16 23:00:00 2019 -03 isdst=0 gmtoff=-10800
+Brazil/East  Sun Nov  3 02:59:59 2019 UTC = Sat Nov  2 23:59:59 2019 -03 isdst=0 gmtoff=-10800
+Brazil/East  Sun Nov  3 03:00:00 2019 UTC = Sun Nov  3 01:00:00 2019 -02 isdst=1 gmtoff=-7200
+ 
+Agora iremos atualizar o pacote tzdata.
+
+
+
+
+# yum update tzdata -y
+ 
+ 
+Agora vamos verificar novamente se o horário de verão permanece com data para alteração:
+
+
+
+# zdump -v Brazil/East | grep 2019
+zdump: warning: zone "Brazil/East" abbreviation "-03" lacks alphabetic at start
+Brazil/East Sun Feb 17 01:59:59 2019 UTC = Sat Feb 16 23:59:59 2019 -02 isdst=1 gmtoff=-7200
+Brazil/East Sun Feb 17 02:00:00 2019 UTC = Sat Feb 16 23:00:00 2019 -03 isdst=0 gmtoff=-10800
+
+1
+2
+3
+4
+5
+6
+ 
+# zdump -v Brazil/East | grep 2019
+zdump: warning: zone "Brazil/East" abbreviation "-03" lacks alphabetic at start
+Brazil/East Sun Feb 17 01:59:59 2019 UTC = Sat Feb 16 23:59:59 2019 -02 isdst=1 gmtoff=-7200
+Brazil/East Sun Feb 17 02:00:00 2019 UTC = Sat Feb 16 23:00:00 2019 -03 isdst=0 gmtoff=-10800
+ 
+
+
