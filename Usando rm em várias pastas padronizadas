@@ -1,0 +1,7 @@
+
+
+rm -rf /home/usuarios/*/Recycled/*
+
+ou 
+
+rm -rf /home/grupos/*/Recycled/*
